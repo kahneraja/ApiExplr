@@ -16,18 +16,13 @@
         Name: 'ApiExplorerApp',
         Version: '1',
         OAuth: oAuth,
-        ActiveEnvironment: 1,
+        ActiveEnvironment: 0,
         Environments: [
                 {
-                    Name: 'Sample',
-                    BaseUrl: '/',
-                    ApiUrl: './Services/Sample.json',
-                    AuthUrl: ''
-                },
-                {
                     Name: 'Local',
-                    BaseUrl: 'http://localhost:53243/',
-                    ApiUrl: 'http://localhost:53243/api/explorer'
+                    BaseUrl: '/',
+                    ApiUrl: '/api/explorer',
+                    AuthUrl: ''
                 }
         ],
         ActiveContentType: 0,

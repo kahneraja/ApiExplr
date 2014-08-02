@@ -16,14 +16,16 @@ namespace ApiExplorer.Common
     {
         private Type BaseType { get; set; }
         private IEnumerable<XElement> xElements;
+        private Type AssemblyType;
 
         public ApiReflector()
         {
         }
 
-        public ApiReflector(Type baseType, string path)
+        public ApiReflector(Type assemblyType, Type baseType, string path)
         {
             BaseType = baseType;
+            AssemblyType = assemblyType;
             XDocument xdoc = XDocument.Load(path);
             xElements = xdoc.Descendants("members").Descendants("member");
         }
@@ -45,9 +47,9 @@ namespace ApiExplorer.Common
 
         public IEnumerable<Type> LoadAssembly()
         {
-            var assembly = Assembly.GetAssembly(BaseType);
+            var assembly = Assembly.GetAssembly(AssemblyType);
             var types = assembly.GetTypes();
-            var objects = types.Where(x => x.BaseType == BaseType);
+            var objects = types.Where(x => x.BaseType == BaseType && x.GetCustomAttributes<RoutePrefixAttribute>().Any());
             return objects;
         }
 

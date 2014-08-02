@@ -14,7 +14,7 @@ namespace ApiExplorer.WebApi.Controllers
     /// </summary>
     [RoutePrefix("api/customers")]
     [EnableCors("*", "*", "*")]
-    public class CustomersController : BaseApiController
+    public class CustomersController : ApiController
     {
         /// <summary>
         /// Return all customers
@@ -22,7 +22,7 @@ namespace ApiExplorer.WebApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Get()
+        public IHttpActionResult GetCustomers()
         {
             var customers = CreateMockCustomers();
 
@@ -40,6 +40,7 @@ namespace ApiExplorer.WebApi.Controllers
         public IHttpActionResult Get([FromUri] int id)
         {
             var customer = CreateMockCustomer();
+            customer.Id = id;
             return Ok(customer);
         }
 
@@ -60,18 +61,23 @@ namespace ApiExplorer.WebApi.Controllers
             {
                 Name = "Sample Name",
                 Age = 33,
-                Address =
-                {
+            };
+
+            customer.Address = CreateMockAddress();
+            customer.Orders = CreateMockOrders();
+            return customer;
+        }
+
+        private Address CreateMockAddress()
+        {
+            return new Address {
                     Country = "Australia",
                     Postcode = 2000,
                     State = "NSW",
                     StreetName = "George St",
                     StreetNumber = 1,
                     Suburb = "Sydney",
-                },
-                Orders = CreateMockOrders()
-            };
-            return customer;
+                };
         }
 
         private List<Customer> CreateMockCustomers()

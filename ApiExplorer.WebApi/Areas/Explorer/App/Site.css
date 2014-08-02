@@ -1,0 +1,13 @@
+﻿pre {
+    max-height: 150px;
+    white-space: pre-wrap;
+}
+
+.modal-dialog pre {
+    max-height: none;
+}
+
+.action-parameters {
+    max-height: 610px;
+    overflow: auto;
+}

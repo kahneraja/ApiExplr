@@ -1,0 +1,84 @@
+<div class="col-md-12" ng-controller="SettingsController">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#Settings">Settings</a></li>
+    </ol>
+    <div class="col-md-12">
+        <h1>Settings</h1>
+    </div>
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">FeedUri</span>
+                        <input type="text" class="form-control" ng-model="Settings.FeedUri" placeholder="FeedUri">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">BaseRequestUri</span>
+                        <input type="text" class="form-control" ng-model="Settings.BaseRequestUri" placeholder="BaseRequestUri">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Credentials</div>
+            <div class="panel-body">
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">AuthUri</span>
+                        <input type="text" class="form-control" ng-model="Credentials.AuthUri" placeholder="AuthUri">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">GrantType</span>
+                        <input type="text" class="form-control" ng-model="Credentials.GrantType" placeholder="GrantType">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">UserName</span>
+                        <input type="text" class="form-control" ng-model="Credentials.UserName" placeholder="UserName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Password</span>
+                        <input type="text" class="form-control" ng-model="Credentials.Password" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Scope</span>
+                        <input type="text" class="form-control" ng-model="Credentials.Scope" placeholder="Scope">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">DeveloperKey</span>
+                        <input type="text" class="form-control" ng-model="Credentials.DeveloperKey" placeholder="DeveloperKey">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="btn-group">
+                <a href="#" type="button" class="btn btn-primary btn-lg" ng-click="SaveSettings()">Save</a>
+            </div>
+        </div>
+    </div>
+</div>

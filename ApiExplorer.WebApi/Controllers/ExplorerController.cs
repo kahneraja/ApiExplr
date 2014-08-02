@@ -14,8 +14,7 @@ namespace ApiExplorer.WebApi.Controllers
     /// Retrieve endpoint data.
     /// </summary>
     [RoutePrefix("api/explorer")]
-    [EnableCors("*", "*", "*")]
-    public class ExplorerController : BaseApiController
+    public class ExplorerController : ApiController
     {
         private ApiReflector reflector;
 
@@ -25,7 +24,7 @@ namespace ApiExplorer.WebApi.Controllers
         public ExplorerController()
         {
             var path = HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml");
-            reflector = new ApiReflector(typeof(BaseApiController), path);
+            reflector = new ApiReflector(typeof(ExplorerController), typeof(ApiController), path);
         }
 
         /// <summary>

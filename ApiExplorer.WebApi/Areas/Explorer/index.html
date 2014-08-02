@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="ApiExplorerApp">
+<head>
+    <title>Api Explorer</title>
+    <script src="./Lib/Jquery/jquery.min.js"></script>
+    <script src="./Lib/Angular/angular.js"></script>
+    <script src="./Lib/Angular/angular-route.js"></script>
+    <script src="./Lib/Angular/angular-ui.js"></script>
+    <script src="./Lib/Angular/ngProgress.min.js"></script>
+    <link rel="stylesheet" href="./Lib/Angular/ngProgress.css" />
+    <script src="./Lib/Bootstrap/bootstrap.min.js"></script>
+    <script src="./Lib/Bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <link rel="stylesheet" href="./Lib/Bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./Lib/Bootstrap/bootswatch.simplex.css" />
+    <link href="App/Site.css" rel="stylesheet" />
+    <!-- Applications -->
+    <script src="./App/App.js"></script>
+    <script src="./App/GlobalConfig.js"></script>
+
+    <!-- Models -->
+    <script src="./App/Models/EndpointModel.js"></script>
+    <script src="./App/Models/ActionModel.js"></script>
+    <script src="./App/Models/ParameterModel.js"></script>
+    <script src="./App/Models/PropertyModel.js"></script>
+
+    <!-- Controllers -->
+    <script src="./App/Layout/TopNavController.js"></script>
+    <script src="./App/Controllers/HomeController.js"></script>
+    <script src="./App/Controllers/EndpointController.js"></script>
+    <script src="./App/Controllers/ActionController.js"></script>
+    <script src="./App/Controllers/ParameterController.js"></script>
+    <script src="./App/Controllers/PropertyController.js"></script>
+    <script src="App/Controllers/SettingsController.js"></script>
+
+    <!-- Services -->
+    <script src="./Services/EndpointDataService.js"></script>
+    <script src="./Services/OAuthTokenService.js"></script>
+    <script src="./Services/SampleJsonService.js"></script>
+    <script src="./Services/Base64Service.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div ng-include="'./App/Layout/TopNav.html'"></div>
+            <div>
+                <div ng-view=""></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

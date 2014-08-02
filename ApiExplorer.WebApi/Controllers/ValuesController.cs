@@ -13,15 +13,11 @@ namespace ApiExplorer.WebApi.Controllers
     /// </summary>
     [RoutePrefix("api/values")]
     [EnableCors("*", "*", "*")]
-    public class ValuesController : BaseApiController
+    public class ValuesController : ApiController
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
         [Route("")]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetCollection()
         {
             return new string[] { "value1", "value2" };
         }

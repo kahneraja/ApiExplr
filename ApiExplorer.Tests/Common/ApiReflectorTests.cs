@@ -5,6 +5,7 @@ using ApiExplorer.Tests.Common.Mocks;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web.Http;
 
 namespace ApiExplorer.Tests.Common
 {
@@ -17,7 +18,7 @@ namespace ApiExplorer.Tests.Common
         public void Init()
         {
             var pathToFile = GetXmlPath();
-            var reflector = new ApiReflector(typeof(MockBaseApiController), pathToFile);
+            var reflector = new ApiReflector(typeof(MockApiController), typeof(ApiController), pathToFile);
             endpoints = reflector.CollectEndpoints();
         }
 

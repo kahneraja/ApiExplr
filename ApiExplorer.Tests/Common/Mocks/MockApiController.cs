@@ -7,13 +7,6 @@ using System.Web.Http;
 
 namespace ApiExplorer.Tests.Common.Mocks
 {
-    /// <summary>
-    /// A mock web api controller base class.
-    /// </summary>
-    public class MockBaseApiController : ApiController
-    {
-    }
-
     public class MockEnquiryModel
     {
         public bool IncludeDetail { get; set; }
@@ -22,7 +15,8 @@ namespace ApiExplorer.Tests.Common.Mocks
     /// <summary>
     /// A mock web api controller.
     /// </summary>
-    public class MockApiController : MockBaseApiController
+    [RoutePrefix("")]
+    public class MockApiController : ApiController
     {
         /// <summary>
         /// Let's find a group!
