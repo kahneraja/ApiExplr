@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiExplorer.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:ApiExplorer.Tests.Common.Mocks.MockBaseApiController">
+            <summary>
+            A mock web api controller base class.
+            </summary>
+        </member>
+        <member name="T:ApiExplorer.Tests.Common.Mocks.MockApiController">
+            <summary>
+            A mock web api controller.
+            </summary>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.FindGroup(System.Collections.Generic.List{System.String})">
+            <summary>
+            Let's find a group!
+            </summary>
+            <param name="Names"></param>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.SetAge(System.Int32,System.Int32)">
+            <summary>
+            Let's set someone's age.
+            </summary>
+            <param name="id"></param>
+            <param name="age"></param>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.SetAges(System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            Let's set the age of a group of people.
+            </summary>
+            <param name="Names"></param>
+            <param name="age"></param>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.FindGroups(System.Int32,ApiExplorer.Tests.Common.Mocks.MockEnquiryModel)">
+            <summary>
+            Let's find lots of groups!
+            </summary>
+            <param name="Names"></param>
+            <param name="age"></param>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.Population">
+            <summary>
+            Get population. I don't take no parameters.
+            </summary>
+            <param name="Names"></param>
+            <param name="age"></param>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.DoSimilarStuff(System.Int32)">
+            <summary>
+            Do Similar Stuff (Part 1).
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiExplorer.Tests.Common.Mocks.MockApiController.DoSimilarStuff(System.Int32,System.String)">
+            <summary>
+            Do Similar Stuff (Part 2).
+            </summary>
+            <param name="i"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

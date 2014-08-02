@@ -1,0 +1,20 @@
+<div class="col-md-12" ng-controller="EndpointController">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#/Endpoint/{{Endpoint.Name}}">{{Endpoint.Name}}</a></li>
+    </ol>
+    <div class="col-md-12">
+        <h1>{{Endpoint.Name}}</h1>
+        <span class="label label-info">~/{{Endpoint.Uri}}</span>
+        <h5>{{Endpoint.Info}}</h5>
+    </div>
+    <div class="col-md-12">
+        <div class="list-group">
+            <a href="#/Endpoint/{{Endpoint.Name}}/Action/{{action.Name}}/HttpMethod/{{action.HttpMethod}}" class="list-group-item" ng-repeat="action in Endpoint.Actions">
+                <h4 class="list-group-item-heading">{{action.HttpMethod}} {{action.Name}}</h4>
+                <span class="label label-info pull-right">/{{action.Uri}}</span>
+                <p class="list-group-item-text">{{action.Info}}</p>
+            </a>
+        </div>
+    </div>
+</div>
