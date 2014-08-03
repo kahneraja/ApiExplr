@@ -396,17 +396,17 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="T:ApiExplr.WebApi.Controllers.ExplorerController">
+        <member name="T:ApiExplr.WebApi.Controllers.ExplrController">
             <summary>
             Retrieve endpoint data.
             </summary>
         </member>
-        <member name="M:ApiExplr.WebApi.Controllers.ExplorerController.#ctor">
+        <member name="M:ApiExplr.WebApi.Controllers.ExplrController.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ApiExplr.WebApi.Controllers.ExplorerController.Get">
+        <member name="M:ApiExplr.WebApi.Controllers.ExplrController.Get">
             <summary>
             Get endpoint data.
             </summary>

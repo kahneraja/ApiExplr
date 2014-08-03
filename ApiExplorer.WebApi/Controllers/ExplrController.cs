@@ -13,18 +13,18 @@ namespace ApiExplr.WebApi.Controllers
     /// <summary>
     /// Retrieve endpoint data.
     /// </summary>
-    [RoutePrefix("api/explorer")]
-    public class ExplorerController : ApiController
+    [RoutePrefix("api/explr")]
+    public class ExplrController : ApiController
     {
         private ApiReflector reflector;
 
         /// <summary>
         /// 
         /// </summary>
-        public ExplorerController()
+        public ExplrController()
         {
             var path = HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml");
-            reflector = new ApiReflector(typeof(ExplorerController), typeof(ApiController), path);
+            reflector = new ApiReflector(typeof(ExplrController), typeof(ApiController), path);
         }
 
         /// <summary>
