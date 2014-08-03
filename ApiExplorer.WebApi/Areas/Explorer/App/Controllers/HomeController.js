@@ -1,42 +1,59 @@
-(function() {
-  'use strict'
+(function () {
+    'use strict'
 
-  angular.module('ApiExplorerApp')
-    .controller('HomeController', ['$scope', 'EndpointDataService', 'OAuthTokenService', HomeController]);
+    angular.module('ApiExplorerApp')
+      .controller('HomeController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', '$location', HomeController]);
 
-  function HomeController($scope, EndpointDataService, OAuthTokenService) {
+    function HomeController($scope, $routeParams, EndpointDataService, OAuthTokenService, $location) {
+        var endpointName = $routeParams.EndpointName;
 
-      $scope.ActiveToken = OAuthTokenService.ActiveToken;
-      $scope.Endpoints = {};
-      $scope.ActiveEndpoint = {};
-      $scope.OAuthEnabled = OAuthTokenService.IsEnabled();
+        $scope.ActiveToken = OAuthTokenService.ActiveToken;
+        $scope.Endpoints = {};
+        $scope.ActiveEndpoint = {};
+        $scope.OAuthEnabled = OAuthTokenService.IsEnabled();
 
-      $scope.Init = function () { 
-          $scope.Endpoints = EndpointDataService.GetEndpoints();
-          $scope.ActiveEndpoint = $scope.Endpoints[0];
-      };
+        $scope.Init = function () {
+            $scope.Endpoints = EndpointDataService.GetEndpoints();
+            $scope.ActiveEndpoint = $scope.MatchActiveEndpoint();
+        };
 
-      $scope.SelectEndpoint = function (i) {
-          $scope.ActiveEndpoint = $scope.Endpoints[i];
-      };
+        $scope.MatchActiveEndpoint = function () {
+            var l = $scope.Endpoints.length;
+            for (var i = 0; i < l; i++) {
+                var e = $scope.Endpoints[i];
+                if (e.Name == endpointName)
+                {
+                    return e;
+                }
+            }
 
-      $scope.RenewToken = function () {
-          OAuthTokenService.Init();
-      };
+            return $scope.Endpoints[0];
 
-      if (!EndpointDataService.IsActive()) {
-          EndpointDataService.Init()
-              .then(function () {
-                  $scope.Init();
-              });
-      } else {
-          $scope.Init();
-      }
+        };
 
-      if (!OAuthTokenService.IsActive() && OAuthTokenService.IsEnabled()) {
-          OAuthTokenService.Init();
-      }
+        $scope.SelectEndpoint = function (i) {
+            $scope.ActiveEndpoint = $scope.Endpoints[i];
+        };
 
-  }
+        $scope.RenewToken = function () {
+            OAuthTokenService.Init();
+        };
+
+        if (!EndpointDataService.IsActive() && EndpointDataService.IsConfigured()) {
+            EndpointDataService.Init()
+                .then(function () {
+                    $scope.Init();
+                });
+        } else if (EndpointDataService.IsConfigured()) {
+            $scope.Init();
+        } else {
+            $location.path('Settings');
+        }
+
+        if (!OAuthTokenService.IsActive() && OAuthTokenService.IsEnabled()) {
+            OAuthTokenService.Init();
+        }
+
+    }
 
 }());

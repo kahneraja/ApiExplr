@@ -41,14 +41,14 @@
         }
 
         function IsActive() {
-            if (this.ActiveToken.Data)
+            if (this.ActiveToken.Data !== undefined && this.ActiveToken.Data !== '')
                 return true;
 
             return false;
         }
 
         function IsEnabled() {
-            if (this.Credentials.AuthUri)
+            if (this.Credentials.AuthUri !== undefined && this.Credentials.AuthUri !== '')
                 return true;
 
             return false;

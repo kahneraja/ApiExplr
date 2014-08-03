@@ -1,10 +1,10 @@
- (function () {
-     'use strict';
+(function () {
+    'use strict';
 
     angular.module('ApiExplorerApp')
-      .controller('ActionController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', 'GlobalConfig', ActionController]);
+      .controller('ActionController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', 'GlobalConfig', '$location', ActionController]);
 
-    function ActionController($scope, $routeParams, EndpointDataService, OAuthTokenService, GlobalConfig) {
+    function ActionController($scope, $routeParams, EndpointDataService, OAuthTokenService, GlobalConfig, $location) {
         var endpointName = $routeParams.EndpointName;
         var actionName = $routeParams.ActionName;
         var httpMethod = $routeParams.HttpMethod;
@@ -53,13 +53,15 @@
                 });
         };
 
-        if (!EndpointDataService.IsActive()) {
+        if (!EndpointDataService.IsActive() && EndpointDataService.IsConfigured()) {
             EndpointDataService.Init()
                 .then(function () {
                     $scope.Init();
                 });
-        } else {
+        } else if (EndpointDataService.IsConfigured()) {
             $scope.Init();
+        } else {
+            $location.path('Settings');
         }
 
         if (!OAuthTokenService.IsActive() && OAuthTokenService.IsEnabled()) {

@@ -1,4 +1,9 @@
 <div class="col-md-12" ng-controller="ActionController">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#/Endpoint/{{EndpointName}}">{{EndpointName}}</a></li>
+        <li><a href="#/Endpoint/{{EndpointName}}/Action/{{Action.Name}}/HttpMethod/{{Action.HttpMethod}}">{{Action.Name}}</a></li>
+    </ol>
     <div class="col-md-7">
         <h1>{{Action.Name}}</h1>
         <h5>{{Action.Info}}</h5>

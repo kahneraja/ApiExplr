@@ -1,16 +1,19 @@
 <div class="col-md-12" ng-controller="HomeController">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+    </ol>
     <div class="col-md-12">
         <h1>Endpoints</h1>
     </div>
     <div class="col-md-6">
         <ul class="list-group">
-            <li ng-click="SelectEndpoint($index)" class="list-group-item" ng-class="{'list-group-item-info' : endpoint == ActiveEndpoint}" ng-repeat="endpoint in Endpoints">
+            <a href="#/Endpoint/{{endpoint.Name}}" class="list-group-item" ng-class="{'list-group-item-info' : endpoint == ActiveEndpoint}" ng-repeat="endpoint in Endpoints">
                 <h4 class="list-group-item-heading">{{endpoint.Name}}</h4>
                 <span class="label label-info pull-right">~/{{endpoint.Uri}}</span>
                 <p class="list-group-item-text">
                     {{endpoint.Info}}&nbsp;
                 </p>
-            </li>
+            </a>
         </ul>
     </div>
     <div class="col-md-6">

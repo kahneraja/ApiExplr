@@ -2,7 +2,7 @@
     'use strict'
 
     angular.module('ApiExplorerApp')
-      .factory('EndpointDataService', ['$http', 'GlobalConfig', 'OAuthTokenService', 'ngProgress', EndpointDataService]);
+      .factory('EndpointDataService', ['$http', 'GlobalConfig', 'OAuthTokenService', 'ngProgress', '$location', EndpointDataService]);
 
     function EndpointDataService($http, GlobalConfig, OAuthTokenService, ngProgress) {
 
@@ -24,7 +24,8 @@
             Settings: Settings,
             UpdateSettings: UpdateSettings,
             IsActive: IsActive,
-            FormatResponse: FormatResponse
+            FormatResponse: FormatResponse,
+            IsConfigured: IsConfigured
         };
 
         return Service;
@@ -38,19 +39,25 @@
             this.JsonFeed = undefined;
         }
 
+        function IsConfigured() {
+            if (this.Settings.FeedUri !== undefined && this.Settings.FeedUri !== '')
+                return true;
+
+            return false;
+        }
+
         function IsActive() {
-            if (this.JsonFeed)
+            if (this.JsonFeed !== undefined && this.JsonFeed !== '')
                 return true;
 
             return false;
         }
 
         function Init() {
-
-            if (this.JsonFeed === undefined)
+            if (!this.IsActive() && this.IsConfigured())
                 return this.LoadJsonFeed().then();
 
-            return true;
+            return false;
         }
 
         function GetEndpoints() {
