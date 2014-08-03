@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h1>Endpoints</h1>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
         <ul class="list-group">
             <li ng-click="SelectEndpoint($index)" class="list-group-item" ng-class="{'list-group-item-info' : endpoint == ActiveEndpoint}" ng-repeat="endpoint in Endpoints">
                 <h4 class="list-group-item-heading">{{endpoint.Name}}</h4>
@@ -13,7 +13,7 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
         <div class="panel panel-info">
             <ul class="list-group">
                 <a href="#/Endpoint/{{ActiveEndpoint.Name}}/Action/{{action.Name}}/HttpMethod/{{action.HttpMethod}}" class="list-group-item" ng-repeat="action in ActiveEndpoint.Actions">
@@ -24,19 +24,6 @@
                     </p>
                 </a>
             </ul>
-        </div>
-
-    </div>
-    <div class="col-md-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                OAuth Bearer Token
-                <i class="pull-right glyphicon glyphicon-lock"></i>
-            </div>
-            <div class="panel-body">
-                <pre>{{GlobalConfig.OAuth.TokenJson}}</pre>
-                <div>Expires in: {{GlobalConfig.OAuth.ExpiresIn / 60}} minute(s).</div>
-            </div>
         </div>
 
     </div>

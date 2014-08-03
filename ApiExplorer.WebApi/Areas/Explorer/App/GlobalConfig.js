@@ -4,26 +4,19 @@
     var GlobalConfig = {
         Name: 'ApiExplorerApp',
         Version: '1',
-        ActiveEnvironment: 0,
-        Environments: [
-                {
-                    Name: 'Local',
-                    BaseUrl: '/',
-                    ApiUrl: '/api/explorer',
-                }
-        ],
-        ActiveContentType: 0,
+        ActiveContentTypeIndex: 0,
         ContentTypes: [
             { Name: 'Json', HeaderValue: 'application/json' },
             { Name: 'Xml', HeaderValue: 'text/xml' }
-        ]
+        ],
+        SaveActiveContentTypeIndex: function (i) {
+            this.ActiveContentType = i;
+            localStorage.GlobalConfigActiveContentTypeIndex = i;
+        }
     };
 
-    if (localStorage.ActiveEnvironment !== undefined)
-        GlobalConfig.ActiveEnvironment = localStorage.ActiveEnvironment;
-
-    if (localStorage.ActiveContentType !== undefined)
-        GlobalConfig.ActiveContentType = localStorage.ActiveContentType;
+    if (localStorage.GlobalConfigActiveContentTypeIndex)
+        GlobalConfig.ActiveContentTypeIndex = localStorage.GlobalConfigActiveContentTypeIndex;
 
     angular.module('ApiExplorerApp')
       .value('GlobalConfig', GlobalConfig);

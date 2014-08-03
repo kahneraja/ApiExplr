@@ -17,6 +17,6 @@ describe("TopNavController.", function () {
     });
 
     it("Check Default ContentType.", function () {
-        expect(scope.ContentType).toBe('Json');
+        expect(scope.ContentTypes[scope.ActiveContentTypeIndex].Name).toBe('Json');
     });
 });

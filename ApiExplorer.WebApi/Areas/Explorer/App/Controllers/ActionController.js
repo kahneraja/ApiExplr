@@ -2,9 +2,9 @@
      'use strict';
 
     angular.module('ApiExplorerApp')
-      .controller('ActionController', ['$scope', '$routeParams', 'EndpointDataService', 'GlobalConfig', 'ngProgress', ActionController]);
+      .controller('ActionController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', 'GlobalConfig', ActionController]);
 
-    function ActionController($scope, $routeParams, EndpointDataService, GlobalConfig, ngProgress) {
+    function ActionController($scope, $routeParams, EndpointDataService, OAuthTokenService, GlobalConfig) {
         var endpointName = $routeParams.EndpointName;
         var actionName = $routeParams.ActionName;
         var httpMethod = $routeParams.HttpMethod;
@@ -14,7 +14,6 @@
         $scope.RequestUri = '';
         $scope.JsonRequest = '{}';
         $scope.JsonResponse = '{}';
-        $scope.GlobalConfig = GlobalConfig;
 
         $scope.Init = function () {
             var endpoint = EndpointDataService.GetEndpoint(endpointName);
@@ -28,8 +27,8 @@
             $scope.Action.RefreshDynamicUri();
             var actionUri = $scope.Action.DynamicUri;
             var endpointUri = $scope.EndpointUri;
-            var baseUrl = GlobalConfig.Environments[GlobalConfig.ActiveEnvironment].BaseUrl;
-            var uri = baseUrl + endpointUri + '/' + actionUri;
+            var baseUri = EndpointDataService.Settings.BaseRequestUri;
+            var uri = baseUri + endpointUri + '/' + actionUri;
 
             $scope.RequestUri = uri;
         };
@@ -50,32 +49,21 @@
             var httpMethod = $scope.Action.HttpMethod;
             EndpointDataService.SendRequest(url, data, httpMethod)
                 .then(function (response) {
-
-                    var data = $scope.FormatResponse(response);
-
-                    $scope.JsonResponse = data;
+                    $scope.JsonResponse = response;
                 });
         };
 
-        $scope.FormatResponse = function (response) {
-            var data = response;
-
-            if (response.data !== undefined)
-                data = response.data;
-
-            if (GlobalConfig.ContentTypes[GlobalConfig.ActiveContentType].Name == 'Json')
-                data = JSON.stringify(data, null, 4);
-
-            return data;
-        };
-
-        if (EndpointDataService.JsonFeed === undefined) {
+        if (!EndpointDataService.IsActive()) {
             EndpointDataService.Init()
                 .then(function () {
                     $scope.Init();
                 });
         } else {
             $scope.Init();
+        }
+
+        if (!OAuthTokenService.IsActive() && OAuthTokenService.IsEnabled()) {
+            OAuthTokenService.Init();
         }
 
     }

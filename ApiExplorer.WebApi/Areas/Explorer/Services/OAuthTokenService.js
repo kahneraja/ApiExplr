@@ -19,7 +19,10 @@
             InitToken: InitToken,
             GetToken: GetToken,
             Clear: Clear,
-            UpdateCredentials: UpdateCredentials
+            UpdateCredentials: UpdateCredentials,
+            IsActive: IsActive,
+            IsEnabled: IsEnabled,
+            GetBearerToken: GetBearerToken
         };
 
         return Service;
@@ -31,10 +34,24 @@
 
         function Init() {
 
-            if (this.ActiveToken.Data === undefined)
+            if (!this.IsActive() && this.IsEnabled())
                 this.InitToken();
 
             return true;
+        }
+
+        function IsActive() {
+            if (this.ActiveToken.Data)
+                return true;
+
+            return false;
+        }
+
+        function IsEnabled() {
+            if (this.Credentials.AuthUri)
+                return true;
+
+            return false;
         }
 
         function Clear(){
@@ -46,16 +63,18 @@
         function InitToken() {
             ngProgress.start();
 
+            var that = this;
+
             this.GetToken().then(function (d) {
                 ngProgress.complete();
                 var accessToken = d.access_token;
 
                 var shortToken = accessToken.substr(accessToken.indexOf('.') + 1, accessToken.lastIndexOf('.') - accessToken.indexOf('.') - 1);
                 var tokenJson = Base64Service.Decode(shortToken);
-                var prettyJson = tokenJson;
-                this.ActiveToken.Data = d.access_token;
-                this.ActiveToken.Json = prettyJson;
-                this.ActiveToken.ExpiresIn = d.expires_in;
+
+                that.ActiveToken.Data = accessToken;
+                that.ActiveToken.Json = tokenJson;
+                that.ActiveToken.ExpiresIn = d.expires_in;
             });
         }
 
@@ -75,13 +94,18 @@
                     'Authorization': authorization
                 }
             }).then(function (response) {
-                console.log(response);
                 return response.data;
             }, function (error) {
-                console.log(error);
             });
 
             return promise;
+        }
+
+        function GetBearerToken() {
+            if (this.IsActive() && this.IsEnabled())
+                return 'Bearer ' + this.ActiveToken.Data;
+
+            return '';
         }
 
     }

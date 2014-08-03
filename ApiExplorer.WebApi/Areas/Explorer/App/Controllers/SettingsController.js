@@ -21,8 +21,11 @@
         };
 
         $scope.SaveSettings = function () {
-            OAuthTokenService.UpdateCredentials($scope.Credentials);
             EndpointDataService.UpdateSettings($scope.Settings);
+        };
+
+        $scope.SaveCredentials = function () {
+            OAuthTokenService.UpdateCredentials($scope.Credentials);
         };
 
         $scope.Init();

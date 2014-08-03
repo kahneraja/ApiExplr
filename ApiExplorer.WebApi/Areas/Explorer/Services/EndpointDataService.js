@@ -23,6 +23,8 @@
             Clear: Clear,
             Settings: Settings,
             UpdateSettings: UpdateSettings,
+            IsActive: IsActive,
+            FormatResponse: FormatResponse
         };
 
         return Service;
@@ -34,6 +36,13 @@
 
         function Clear(){
             this.JsonFeed = undefined;
+        }
+
+        function IsActive() {
+            if (this.JsonFeed)
+                return true;
+
+            return false;
         }
 
         function Init() {
@@ -77,19 +86,22 @@
         }
 
         function GetData() {
-            var apiUrl = GlobalConfig.Environments[GlobalConfig.ActiveEnvironment].ApiUrl;
+            var apiUrl = this.Settings.FeedUri;
 
             var promise = $http.get(apiUrl).then(function (response) {
-                console.log(response);
                 return response.data;
             });
 
             return promise;
         }
 
+
         function SendRequest(Url, Data, HttpMethod) {
-            var contentType = GlobalConfig.ContentTypes[GlobalConfig.ActiveContentType].HeaderValue;
-            var authorization = 'Bearer ' + OAuthTokenService.ActiveToken.Data;
+            var contentType = GlobalConfig.ContentTypes[GlobalConfig.ActiveContentTypeIndex].HeaderValue;
+
+            var authorization = OAuthTokenService.GetBearerToken();
+
+            var that = this;
 
             ngProgress.start();
 
@@ -104,15 +116,26 @@
                 }
             }).then(function (response) {
                 ngProgress.complete();
-                console.log(response);
-                return response.data;
+                return that.FormatResponse(response);
             }, function (error) {
                 ngProgress.complete();
-                console.log(error);
-                return error;
+                return that.FormatResponse(error);
             });
 
             return promise;
+        }
+
+
+        function FormatResponse(response) {
+            var data = response;
+
+            if (response.data !== undefined)
+                data = response.data;
+
+            if (GlobalConfig.ContentTypes[GlobalConfig.ActiveContentTypeIndex].Name == 'Json')
+                data = JSON.stringify(data, null, 4);
+
+            return data;
         }
     }
 }());

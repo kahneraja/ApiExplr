@@ -6,10 +6,12 @@
     <div class="col-md-12">
         <h1>Settings</h1>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-5">
         <div class="panel">
+            <div class="panel-heading">Service References</div>
             <div class="panel-body">
                 <div class="form-group">
+                    <span class="help-block">The location of your explorer web api controller.</span>
                     <div class="input-group">
                         <span class="input-group-addon">FeedUri</span>
                         <input type="text" class="form-control" ng-model="Settings.FeedUri" placeholder="FeedUri">
@@ -17,20 +19,30 @@
                 </div>
 
                 <div class="form-group">
+                    <span class="help-block">The base uri for your web api application.</span>
                     <div class="input-group">
                         <span class="input-group-addon">BaseRequestUri</span>
                         <input type="text" class="form-control" ng-model="Settings.BaseRequestUri" placeholder="BaseRequestUri">
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Credentials</div>
-            <div class="panel-body">
-
 
                 <div class="form-group">
+                    <div class="btn-group pull-right">
+                        <a href="#" type="button" class="btn btn-primary btn-lg" ng-click="SaveSettings()">Save</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel">
+            <div class="panel-heading">Authentication</div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <span class="help-block">Leave this blank to disable authentication.</span>
                     <div class="input-group">
                         <span class="input-group-addon">AuthUri</span>
                         <input type="text" class="form-control" ng-model="Credentials.AuthUri" placeholder="AuthUri">
@@ -38,6 +50,7 @@
                 </div>
 
                 <div class="form-group">
+                    <span class="help-block">Account details.</span>
                     <div class="input-group">
                         <span class="input-group-addon">GrantType</span>
                         <input type="text" class="form-control" ng-model="Credentials.GrantType" placeholder="GrantType">
@@ -72,13 +85,15 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <div class="btn-group pull-right">
+                        <a href="#" type="button" class="btn btn-primary btn-lg" ng-click="SaveCredentials()">Save</a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-primary btn-lg" ng-click="SaveSettings()">Save</a>
-            </div>
-        </div>
+
     </div>
 </div>

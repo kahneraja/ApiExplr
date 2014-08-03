@@ -2,13 +2,14 @@
   'use strict'
 
   angular.module('ApiExplorerApp')
-    .controller('HomeController', ['$scope', 'EndpointDataService', 'OAuthTokenService', 'GlobalConfig',  HomeController]);
+    .controller('HomeController', ['$scope', 'EndpointDataService', 'OAuthTokenService', HomeController]);
 
-  function HomeController($scope, EndpointDataService, OAuthTokenService, GlobalConfig) {
+  function HomeController($scope, EndpointDataService, OAuthTokenService) {
 
-      $scope.GlobalConfig = GlobalConfig;
+      $scope.ActiveToken = OAuthTokenService.ActiveToken;
       $scope.Endpoints = {};
       $scope.ActiveEndpoint = {};
+      $scope.OAuthEnabled = OAuthTokenService.IsEnabled();
 
       $scope.Init = function () { 
           $scope.Endpoints = EndpointDataService.GetEndpoints();
@@ -19,7 +20,11 @@
           $scope.ActiveEndpoint = $scope.Endpoints[i];
       };
 
-      if (EndpointDataService.JsonFeed === undefined) {
+      $scope.RenewToken = function () {
+          OAuthTokenService.Init();
+      };
+
+      if (!EndpointDataService.IsActive()) {
           EndpointDataService.Init()
               .then(function () {
                   $scope.Init();
@@ -28,7 +33,7 @@
           $scope.Init();
       }
 
-      if (OAuthTokenService.ActiveToken.Data === undefined) {
+      if (!OAuthTokenService.IsActive() && OAuthTokenService.IsEnabled()) {
           OAuthTokenService.Init();
       }
 
