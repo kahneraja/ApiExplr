@@ -4,7 +4,7 @@ describe("TopNavController.", function () {
     var scope;
     var controller;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
 
     beforeEach(inject(function ($controller, $rootScope, $route) {
         constructor = $controller;

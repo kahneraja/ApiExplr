@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.Tests", "ApiExplor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.WebApi", "ApiExplorer.WebApi\ApiExplr.WebApi.csproj", "{3501DE69-333A-4656-9355-814701ACB36A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplorer.Common", "ApiExplorer.Common\ApiExplorer.Common.csproj", "{C2DE9415-B7A7-4BF7-BBC9-CDCE2ACDA81D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.Common", "ApiExplorer.Common\ApiExplr.Common.csproj", "{C2DE9415-B7A7-4BF7-BBC9-CDCE2ACDA81D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.AuthApi", "ApiExplorer.AuthApi\ApiExplr.AuthApi.csproj", "{EE78C607-4059-413A-ADEE-1BFBB2A0B433}"
 EndProject

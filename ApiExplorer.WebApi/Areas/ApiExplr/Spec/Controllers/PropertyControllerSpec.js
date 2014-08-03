@@ -5,7 +5,7 @@ describe("Property Controller", function () {
     var controller;
     var property;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
 
     beforeEach(inject(function ($controller, $rootScope, $route) {
         property = new PropertyModel("TestName", "TestType");

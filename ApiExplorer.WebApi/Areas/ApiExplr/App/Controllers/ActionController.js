@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('ActionController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', 'GlobalConfig', '$location', ActionController]);
 
     function ActionController($scope, $routeParams, EndpointDataService, OAuthTokenService, GlobalConfig, $location) {

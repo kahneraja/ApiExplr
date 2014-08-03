@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .factory('OAuthTokenService', ['$http', 'GlobalConfig', 'Base64Service', 'ngProgress', OAuthTokenService]);
 
     function OAuthTokenService($http, GlobalConfig, Base64Service, ngProgress) {

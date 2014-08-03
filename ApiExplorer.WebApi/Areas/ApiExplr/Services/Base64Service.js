@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .factory('Base64Service', ['$http', 'GlobalConfig', Base64Service]);
 
     function Base64Service($http, GlobalConfig) {

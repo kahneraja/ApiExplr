@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('PropertyController', ['$scope', PropertyController]);
 
     function PropertyController($scope) {

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ApiExplorer.WebApi</name>
+        <name>ApiExplr.WebApi</name>
     </assembly>
     <members>
         <member name="M:ApiExplr.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">

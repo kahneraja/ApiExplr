@@ -5,7 +5,7 @@ describe("Parameter Controller", function () {
     var controller;
     var parameter;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
     
     beforeEach(inject(function ($controller, $rootScope, $route) {
         parameter = new ParameterModel("TestName", "TestType");

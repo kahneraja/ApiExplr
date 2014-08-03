@@ -5,7 +5,7 @@ describe("Endpoint Controller", function () {
     var globalConfig;
     var endpointDataService;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
 
     beforeEach(inject(function ($controller, $rootScope, $route, EndpointDataService, SampleJsonService, GlobalConfig) {
         constructor = $controller;

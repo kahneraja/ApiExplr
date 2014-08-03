@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('HomeController', ['$scope', '$routeParams', 'EndpointDataService', 'OAuthTokenService', '$location', HomeController]);
 
     function HomeController($scope, $routeParams, EndpointDataService, OAuthTokenService, $location) {

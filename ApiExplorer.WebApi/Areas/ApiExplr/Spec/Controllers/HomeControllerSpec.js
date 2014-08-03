@@ -6,7 +6,7 @@ describe("Home Controller", function () {
     var endpointDataService;
     var sampleJsonService;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
     
     beforeEach(inject(function ($controller, $rootScope, EndpointDataService, SampleJsonService) {
         $controllerConstructor = $controller;

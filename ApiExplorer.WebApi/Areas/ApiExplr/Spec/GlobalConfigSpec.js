@@ -2,7 +2,7 @@ describe("Global Config.", function () {
 
     var globalConfig;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
 
     beforeEach(inject(function (GlobalConfig) {
         globalConfig = GlobalConfig;

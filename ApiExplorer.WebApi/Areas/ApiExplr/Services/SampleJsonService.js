@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .factory('SampleJsonService', ['$http', SampleJsonService]);
 
     function SampleJsonService($http) {

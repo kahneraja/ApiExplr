@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module("ApiExplorerApp", ['ngRoute', 'ngProgress']);
+    var app = angular.module("ApiExplr", ['ngRoute', 'ngProgress']);
 
 
     app.config(['$routeProvider', function ($routeProvider) {

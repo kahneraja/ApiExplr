@@ -2,7 +2,7 @@
     'use strict';
 
     var GlobalConfig = {
-        Name: 'ApiExplorerApp',
+        Name: 'ApiExplr',
         Version: '1',
         ActiveContentTypeIndex: 0,
         ContentTypes: [
@@ -18,7 +18,7 @@
     if (localStorage.GlobalConfigActiveContentTypeIndex)
         GlobalConfig.ActiveContentTypeIndex = localStorage.GlobalConfigActiveContentTypeIndex;
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .value('GlobalConfig', GlobalConfig);
 
 

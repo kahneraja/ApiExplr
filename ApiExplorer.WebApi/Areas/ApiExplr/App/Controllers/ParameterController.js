@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('ParameterController', ['$scope', ParameterController]);
 
     function ParameterController($scope) {

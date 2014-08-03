@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('SettingsController', ['$scope', 'EndpointDataService', 'OAuthTokenService', SettingsController]);
 
     function SettingsController($scope, EndpointDataService, OAuthTokenService) {

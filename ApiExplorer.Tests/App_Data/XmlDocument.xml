@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ApiExplorer.Tests</name>
+        <name>ApiExplr.Tests</name>
     </assembly>
     <members>
         <member name="T:ApiExplr.Tests.Common.Mocks.MockApiController">

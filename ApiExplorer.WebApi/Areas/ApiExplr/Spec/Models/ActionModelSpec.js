@@ -2,7 +2,7 @@ describe("ActionModel", function () {
 
     var endpointDataService;
 
-    beforeEach(module('ApiExplorerApp'));
+    beforeEach(module('ApiExplr'));
 
     beforeEach(inject(function (EndpointDataService, SampleJsonService) {
         EndpointDataService.JsonFeed = SampleJsonService.Sample;

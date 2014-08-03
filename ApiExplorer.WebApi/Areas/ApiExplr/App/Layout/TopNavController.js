@@ -2,7 +2,7 @@
     'use strict'
 
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('TopNavController', ['$scope', 'GlobalConfig', 'OAuthTokenService', TopNavController]);
 
     function TopNavController($scope, GlobalConfig, OAuthTokenService) {

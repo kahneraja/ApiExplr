@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .controller('EndpointController', ['$scope', '$routeParams', 'EndpointDataService', EndpointController]);
 
     function EndpointController($scope, $routeParams, EndpointDataService) {

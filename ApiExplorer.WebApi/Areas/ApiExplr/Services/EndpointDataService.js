@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    angular.module('ApiExplorerApp')
+    angular.module('ApiExplr')
       .factory('EndpointDataService', ['$http', 'GlobalConfig', 'OAuthTokenService', 'ngProgress', '$location', EndpointDataService]);
 
     function EndpointDataService($http, GlobalConfig, OAuthTokenService, ngProgress) {
