@@ -10,7 +10,7 @@
             { Name: 'Xml', HeaderValue: 'text/xml' }
         ],
         SaveActiveContentTypeIndex: function (i) {
-            this.ActiveContentType = i;
+            this.ActiveContentTypeIndex = i;
             localStorage.GlobalConfigActiveContentTypeIndex = i;
         }
     };
