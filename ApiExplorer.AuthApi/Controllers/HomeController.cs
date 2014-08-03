@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ApiExplorer.AuthApi.Controllers
+namespace ApiExplr.AuthApi.Controllers
 {
     public class HomeController : Controller
     {

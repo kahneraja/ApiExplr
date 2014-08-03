@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ApiExplorer.WebApi.Models
+namespace ApiExplr.WebApi.Models
 {
     public class Customer : Person
     {

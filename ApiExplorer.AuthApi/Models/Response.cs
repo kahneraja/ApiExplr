@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ApiExplorer.AuthApi.Models
+namespace ApiExplr.AuthApi.Models
 {
     public class TokenResponse
     {

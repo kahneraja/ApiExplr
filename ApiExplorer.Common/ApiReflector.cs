@@ -10,7 +10,7 @@ using System.Web.Http.Controllers;
 using System.Xml.Linq;
 
 
-namespace ApiExplorer.Common
+namespace ApiExplr.Common
 {
     public class ApiReflector
     {

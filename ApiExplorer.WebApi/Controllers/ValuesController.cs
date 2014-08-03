@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace ApiExplorer.WebApi.Controllers
+namespace ApiExplr.WebApi.Controllers
 {
     /// <summary>
     /// Retrieve amazing values from an amazing web api controller.

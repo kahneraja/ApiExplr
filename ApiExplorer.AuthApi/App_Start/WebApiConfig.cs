@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace ApiExplorer.AuthApi
+namespace ApiExplr.AuthApi
 {
     public static class WebApiConfig
     {

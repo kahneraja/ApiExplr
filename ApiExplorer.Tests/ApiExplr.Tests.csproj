@@ -6,7 +6,7 @@
     <ProjectGuid>{65F2B86E-0190-4A71-9E44-315868491528}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiExplorer.Tests</RootNamespace>
+    <RootNamespace>ApiExplr.Tests</RootNamespace>
     <AssemblyName>ApiExplorer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -63,7 +63,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Common\ApiReflectorTests.cs" />
+    <Compile Include="Common\ApiExplrTests.cs" />
     <Compile Include="Common\Mocks\MockApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

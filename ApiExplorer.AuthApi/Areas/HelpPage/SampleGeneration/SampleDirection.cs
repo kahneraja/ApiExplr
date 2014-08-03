@@ -1,4 +1,4 @@
-namespace ApiExplorer.AuthApi.Areas.HelpPage
+namespace ApiExplr.AuthApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

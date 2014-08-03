@@ -7,7 +7,7 @@
     <ProjectGuid>{C2DE9415-B7A7-4BF7-BBC9-CDCE2ACDA81D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiExplorer.Common</RootNamespace>
+    <RootNamespace>ApiExplr.Common</RootNamespace>
     <AssemblyName>ApiExplorer.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

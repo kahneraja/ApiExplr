@@ -1,4 +1,4 @@
-﻿using ApiExplorer.WebApi.Models;
+﻿using ApiExplr.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace ApiExplorer.WebApi.Controllers
+namespace ApiExplr.WebApi.Controllers
 {
     /// <summary>
     /// Manage customer data.

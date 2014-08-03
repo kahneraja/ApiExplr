@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ApiExplorer.AuthApi
+namespace ApiExplr.AuthApi
 {
     public class BundleConfig
     {

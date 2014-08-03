@@ -1,9 +1,9 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using ApiExplorer.AuthApi.Areas.HelpPage.Models;
+using ApiExplr.AuthApi.Areas.HelpPage.Models;
 
-namespace ApiExplorer.AuthApi.Areas.HelpPage.Controllers
+namespace ApiExplr.AuthApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

@@ -1,4 +1,4 @@
-﻿using ApiExplorer.AuthApi.Models;
+﻿using ApiExplr.AuthApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace ApiExplorer.AuthApi.Controllers
+namespace ApiExplr.AuthApi.Controllers
 {
     public class TokenController : ApiController
     {

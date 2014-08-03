@@ -7,9 +7,9 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Description;
-using ApiExplorer.WebApi.Areas.HelpPage.Models;
+using ApiExplr.WebApi.Areas.HelpPage.Models;
 
-namespace ApiExplorer.WebApi.Areas.HelpPage
+namespace ApiExplr.WebApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

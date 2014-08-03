@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplorer.Tests", "ApiExplorer.Tests\ApiExplorer.Tests.csproj", "{65F2B86E-0190-4A71-9E44-315868491528}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.Tests", "ApiExplorer.Tests\ApiExplr.Tests.csproj", "{65F2B86E-0190-4A71-9E44-315868491528}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplorer.WebApi", "ApiExplorer.WebApi\ApiExplorer.WebApi.csproj", "{3501DE69-333A-4656-9355-814701ACB36A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.WebApi", "ApiExplorer.WebApi\ApiExplr.WebApi.csproj", "{3501DE69-333A-4656-9355-814701ACB36A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplorer.Common", "ApiExplorer.Common\ApiExplorer.Common.csproj", "{C2DE9415-B7A7-4BF7-BBC9-CDCE2ACDA81D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplorer.AuthApi", "ApiExplorer.AuthApi\ApiExplorer.AuthApi.csproj", "{EE78C607-4059-413A-ADEE-1BFBB2A0B433}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExplr.AuthApi", "ApiExplorer.AuthApi\ApiExplr.AuthApi.csproj", "{EE78C607-4059-413A-ADEE-1BFBB2A0B433}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,16 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ApiExplorer.Common;
-using ApiExplorer.Tests.Common.Mocks;
+using ApiExplr.Common;
+using ApiExplr.Tests.Common.Mocks;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Http;
 
-namespace ApiExplorer.Tests.Common
+namespace ApiExplr.Tests.Common
 {
     [TestClass]
-    public class ApiReflectorTests
+    public class ApiExplrTests
     {
         private List<EndpointModel> endpoints;
 

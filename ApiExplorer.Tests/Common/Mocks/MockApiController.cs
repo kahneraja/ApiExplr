@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace ApiExplorer.Tests.Common.Mocks
+namespace ApiExplr.Tests.Common.Mocks
 {
     public class MockEnquiryModel
     {

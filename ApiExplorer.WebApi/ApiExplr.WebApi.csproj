@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EE78C607-4059-413A-ADEE-1BFBB2A0B433}</ProjectGuid>
+    <ProjectGuid>{3501DE69-333A-4656-9355-814701ACB36A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiExplorer.AuthApi</RootNamespace>
-    <AssemblyName>ApiExplorer.AuthApi</AssemblyName>
+    <RootNamespace>ApiExplr.WebApi</RootNamespace>
+    <AssemblyName>ApiExplorer.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\XmlDocument.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\ApiExplorer.WebApi.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -141,18 +143,80 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ExplorerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\Response.cs" />
-    <Compile Include="Controllers\TokenController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.html" />
+    <Content Include="Areas\ApiExplr\Services\OAuthTokenService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Areas\ApiExplr\App\App.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\ActionController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\ActionController.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\ApiExplorerAppGarden.csproj" />
+    <Content Include="Areas\ApiExplr\App\Controllers\EndpointController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\EndpointController.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\HomeController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\HomeController.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\ParameterController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\ParameterController.js" />
+    <Content Include="Areas\ApiExplr\App\Controllers\PropertyController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\PropertyController.js" />
+    <Content Include="Areas\ApiExplr\App\GlobalConfig.js" />
+    <Content Include="Areas\ApiExplr\App\Layout\TopNav.html" />
+    <Content Include="Areas\ApiExplr\App\Layout\TopNavController.js" />
+    <Content Include="Areas\ApiExplr\App\Models\ActionModel.js" />
+    <Content Include="Areas\ApiExplr\App\Models\EndpointModel.js" />
+    <Content Include="Areas\ApiExplr\App\Models\ParameterModel.js" />
+    <Content Include="Areas\ApiExplr\App\Models\PropertyModel.js" />
+    <Content Include="Areas\ApiExplr\App\Site.css" />
+    <Content Include="Areas\ApiExplr\index.html" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\angular-mocks.js" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\angular-route.js" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\angular-ui.js" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\angular.js" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\ngProgress.css" />
+    <Content Include="Areas\ApiExplr\Lib\Angular\ngProgress.min.js" />
+    <Content Include="Areas\ApiExplr\Lib\Bootstrap\bootstrap.min.css" />
+    <Content Include="Areas\ApiExplr\Lib\Bootstrap\bootstrap.min.js" />
+    <Content Include="Areas\ApiExplr\Lib\Bootstrap\bootswatch.simplex.css" />
+    <Content Include="Areas\ApiExplr\Lib\Bootstrap\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\ApiExplr\Lib\Jasmine\boot.js" />
+    <Content Include="Areas\ApiExplr\Lib\Jasmine\jasmine-html.js" />
+    <Content Include="Areas\ApiExplr\Lib\Jasmine\jasmine.css" />
+    <Content Include="Areas\ApiExplr\Lib\Jasmine\jasmine.js" />
+    <Content Include="Areas\ApiExplr\Lib\JQuery\jquery.min.js" />
+    <Content Include="Areas\ApiExplr\Services\Base64Service.js" />
+    <Content Include="Areas\ApiExplr\Services\EndpointDataService.js" />
+    <Content Include="Areas\ApiExplr\Services\SampleJsonService.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\ActionControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\EndpointControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\HomeControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\ParameterControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\PropertyControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Controllers\TopNavControllerSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\GlobalConfigSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\index.html" />
+    <Content Include="Areas\ApiExplr\Spec\Models\ActionModelSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Models\EndpointModelSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Models\ParameterModelSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Models\PropertyModelSpec.js" />
+    <Content Include="Areas\ApiExplr\Spec\Services\EndpointDataServiceSpec.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -169,6 +233,11 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\ApiExplr\Lib\JQuery\jquery.min.map" />
+    <Content Include="Areas\ApiExplr\Services\Sample.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -192,7 +261,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ApiExplorer.Common\ApiExplorer.Common.csproj">
+      <Project>{c2de9415-b7a7-4bf7-bbc9-cdce2acda81d}</Project>
+      <Name>ApiExplorer.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -216,9 +290,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12424</DevelopmentServerPort>
+          <DevelopmentServerPort>53243</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:12424/</IISUrl>
+          <IISUrl>http://localhost:53243/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

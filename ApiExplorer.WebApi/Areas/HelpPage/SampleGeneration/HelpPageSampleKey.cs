@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 
-namespace ApiExplorer.WebApi.Areas.HelpPage
+namespace ApiExplr.WebApi.Areas.HelpPage
 {
     /// <summary>
     /// This is used to identify the place where the sample should be applied.
