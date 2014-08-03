@@ -121,9 +121,7 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -158,6 +156,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\XmlDocument.xml" />
     <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.js" />
     <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.html" />
     <Content Include="Areas\ApiExplr\App\Controllers\Templates\RequestJsonTemplate.html" />
@@ -240,6 +239,8 @@
     <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\ApiExplr\Lib\JQuery\jquery.min.map" />
     <Content Include="Areas\ApiExplr\Services\Sample.json" />
+    <None Include="Properties\PublishProfiles\apiexplr-webapi.pubxml" />
+    <None Include="Properties\PublishProfiles\ApiExplr.WebApi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

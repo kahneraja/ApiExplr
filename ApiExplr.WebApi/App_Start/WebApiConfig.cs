@@ -9,6 +9,8 @@ namespace ApiExplr.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+
             // Web API configuration and services
             config.EnableCors();
 
