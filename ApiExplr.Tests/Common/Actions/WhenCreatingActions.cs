@@ -22,11 +22,45 @@ namespace ApiExplr.Tests.Common.Endpoints
         }
 
         [TestMethod]
-        public void ShouldHaveInfo()
+        public void ShouldHaveCorrectInfo()
         {
             var methodInfo = typeof(MockApiController).GetMethod("FindGroup");
             var actionModel = _ApiReflector.CreateAction(methodInfo);
             Assert.AreEqual(actionModel.Info, "Let's find a group!");
+        }
+
+        [TestMethod]
+        public void ShouldHaveCorrectNumberOfActions()
+        {            
+            var endpoint = _ApiReflector.CreateEndpoint(typeof(MockApiController));
+            Assert.AreEqual(8, endpoint.Actions.Count);
+        }
+
+        [TestMethod]
+        public void ShouldGetCorrectFirstInfoWithSameName()
+        {
+            var methodInfo = typeof(MockApiController).GetMethods().First(x => x.Name  == "DoSimilarStuff");
+            var parameters = methodInfo.GetParameters().ToList();
+            var info = _ApiReflector.GetActionInfo(methodInfo, parameters);
+            Assert.AreEqual("Do Similar Stuff (Part 1).", info);
+        }
+
+        [TestMethod]
+        public void ShouldGetCorrectLastInfoWithSameName()
+        {
+            var methodInfo = typeof(MockApiController).GetMethods().Last(x => x.Name == "DoSimilarStuff");
+            var parameters = methodInfo.GetParameters().ToList();
+            var info = _ApiReflector.GetActionInfo(methodInfo, parameters);
+            Assert.AreEqual("Do Similar Stuff (Part 2).", info);
+        }
+
+        [TestMethod]
+        public void ShouldGetCorrectInfoWithNoParameters()
+        {
+            var methodInfo = typeof(MockApiController).GetMethods().Last(x => x.Name == "Population");
+            var parameters = methodInfo.GetParameters().ToList();
+            var info = _ApiReflector.GetActionInfo(methodInfo, parameters);
+            Assert.AreEqual(info, "Get population. I don't take no parameters.");
         }
     }
 }

@@ -98,7 +98,7 @@ namespace ApiExplr.Common
             var action = new ActionModel();
             action.Name = methodInfo.Name;
             action.Parameters = CreateParameters(methodInfo.GetParameters().ToList());
-            action.Info = GetActionInfo(methodInfo, action.Parameters);
+            action.Info = GetActionInfo(methodInfo, methodInfo.GetParameters().ToList());
 
             var info = FindActionInfo(methodInfo);
 
@@ -116,7 +116,7 @@ namespace ApiExplr.Common
             return summary;
         }
 
-        public string GetActionInfo(MethodInfo methodInfo, List<ParameterModel> parameters)
+        public string GetActionInfo(MethodInfo methodInfo, List<ParameterInfo> parameters)
         {
             var info = "";
             var endpointName = methodInfo.DeclaringType.FullName;
@@ -131,7 +131,7 @@ namespace ApiExplr.Common
             return info.Trim();
         }
 
-        public XElement FindMatchingAction(List<ParameterModel> parameters, string xmlName)
+        public XElement FindMatchingAction(List<ParameterInfo> parameters, string xmlName)
         {
             var elements = xElements.Where(x => x.Attribute("name").Value.ToString().StartsWith(xmlName));
 
@@ -144,7 +144,7 @@ namespace ApiExplr.Common
             return PickActionFromParameters(parameters, elements);
         }
 
-        private static XElement PickActionFromParameters(List<ParameterModel> parameters, IEnumerable<XElement> actions)
+        private static XElement PickActionFromParameters(List<ParameterInfo> parameters, IEnumerable<XElement> actions)
         {
             foreach (var a in actions)
             {
