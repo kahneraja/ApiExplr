@@ -20,7 +20,9 @@
         <div class="panel panel-info">
             <ul class="list-group">
                 <a href="#/Endpoint/{{ActiveEndpoint.Name}}/Action/{{action.Name}}/HttpMethod/{{action.HttpMethod}}" class="list-group-item" ng-repeat="action in ActiveEndpoint.Actions">
-                    <h4 class="list-group-item-heading">{{action.Name}}</h4>
+                    <h4 class="list-group-item-heading">
+                        <i class="glyphicon" ng-class="{'glyphicon-export' : action.HttpMethod == 'GET', 'glyphicon-import' : action.HttpMethod == 'POST', 'glyphicon-floppy-open' : action.HttpMethod == 'PUT', 'glyphicon-floppy-remove' : action.HttpMethod == 'DELETE'}"></i> 
+                        {{action.HttpMethod}} {{action.Name}}</h4>
                     <span class="label label-info pull-right">/{{action.Uri}}</span>
                     <p class="list-group-item-text">
                         {{action.Info}}&nbsp;

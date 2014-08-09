@@ -17,7 +17,7 @@ namespace ApiExplr.Tests.Common
         [TestInitialize]
         public void Init()
         {
-            var pathToFile = GetXmlPath();
+            var pathToFile = XmlLocator.GetPath();
             var reflector = new ApiReflector(typeof(MockApiController), typeof(ApiController), pathToFile);
             endpoints = reflector.CollectEndpoints();
         }
@@ -69,16 +69,5 @@ namespace ApiExplr.Tests.Common
 
             Assert.AreEqual(info, "Get population. I don't take no parameters.");
         }
-
-        private static string GetXmlPath()
-        {
-            var filename = "XmlDocument.xml";
-            string currentDir = new System.Diagnostics.StackFrame(true).GetFileName();
-            var workingFile = new FileInfo(currentDir);
-            var pathToFile = string.Format("{0}\\App_Data\\{1}", workingFile.Directory.Parent.FullName, filename);
-            return pathToFile;
-        }
-
     }
-
 }

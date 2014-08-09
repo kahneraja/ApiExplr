@@ -64,8 +64,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\Actions\WhenCreatingActions.cs" />
     <Compile Include="Common\ApiExplrTests.cs" />
+    <Compile Include="Common\Endpoints\WhenCreatingEndpoints.cs" />
     <Compile Include="Common\Mocks\MockApiController.cs" />
+    <Compile Include="Common\XmlLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
