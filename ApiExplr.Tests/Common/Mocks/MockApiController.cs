@@ -115,6 +115,13 @@ namespace ApiExplr.Tests.Common.Mocks
         {
             return Ok();
         }
+
+        [HttpDelete]
+        [Route("")]
+        public IHttpActionResult RemoveAccount(int i, string s)
+        {
+            return Ok();
+        }
     }
 
 }

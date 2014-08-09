@@ -33,7 +33,7 @@ namespace ApiExplr.Tests.Common.Endpoints
         public void ShouldHaveCorrectNumberOfActions()
         {            
             var endpoint = _ApiReflector.CreateEndpoint(typeof(MockApiController));
-            Assert.AreEqual(8, endpoint.Actions.Count);
+            Assert.AreEqual(9, endpoint.Actions.Count);
         }
 
         [TestMethod]
@@ -61,6 +61,14 @@ namespace ApiExplr.Tests.Common.Endpoints
             var parameters = methodInfo.GetParameters().ToList();
             var info = _ApiReflector.GetActionInfo(methodInfo, parameters);
             Assert.AreEqual(info, "Get population. I don't take no parameters.");
+        }
+
+        [TestMethod]
+        public void ShouldResolveDeleteHttpMethod()
+        {
+            var methodInfo = typeof(MockApiController).GetMethods().Last(x => x.Name == "RemoveAccount");
+            var httpMethod = _ApiReflector.GetHttpActions(methodInfo);
+            Assert.AreEqual("DELETE", httpMethod);
         }
     }
 }

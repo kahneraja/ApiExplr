@@ -309,11 +309,11 @@ namespace ApiExplr.Common
             if (m.GetCustomAttributes<HttpPostAttribute>().Any())
                 action = m.GetCustomAttribute<HttpPostAttribute>().HttpMethods.First().Method;
 
-            if (m.GetCustomAttributes<HttpPostAttribute>().Any())
-                action = m.GetCustomAttribute<HttpPostAttribute>().HttpMethods.First().Method;
-
             if (m.GetCustomAttributes<HttpPutAttribute>().Any())
                 action = m.GetCustomAttribute<HttpPutAttribute>().HttpMethods.First().Method;
+
+            if (m.GetCustomAttributes<HttpDeleteAttribute>().Any())
+                action = m.GetCustomAttribute<HttpDeleteAttribute>().HttpMethods.First().Method;
 
             return action;
         }
