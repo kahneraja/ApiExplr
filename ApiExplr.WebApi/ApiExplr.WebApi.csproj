@@ -240,7 +240,6 @@
     <Content Include="Areas\ApiExplr\Lib\JQuery\jquery.min.map" />
     <Content Include="Areas\ApiExplr\Services\Sample.json" />
     <None Include="Properties\PublishProfiles\apiexplr-webapi.pubxml" />
-    <None Include="Properties\PublishProfiles\ApiExplr.WebApi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -291,7 +290,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53243</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
