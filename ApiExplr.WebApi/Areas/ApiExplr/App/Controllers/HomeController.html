@@ -6,30 +6,38 @@
         <h1>Controllers</h1>
     </div>
     <div class="col-md-6">
-        <ul class="list-group">
-            <a href="#/Endpoint/{{endpoint.Name}}" class="list-group-item" ng-class="{'list-group-item-info' : endpoint == ActiveEndpoint}" ng-repeat="endpoint in Endpoints">
-                <h4 class="list-group-item-heading">{{endpoint.Name}}</h4>
-                <span class="label label-info pull-right">~/{{endpoint.Uri}}</span>
-                <p class="list-group-item-text">
-                    {{endpoint.Info}}&nbsp;
-                </p>
-            </a>
-        </ul>
+        <div class="panel">
+            <ul class="list-group">
+                <a href="#/Endpoint/{{endpoint.Name}}" class="list-group-item" ng-class="{'list-group-item-info' : endpoint == ActiveEndpoint}" ng-repeat="endpoint in Endpoints">
+                    <h4 class="list-group-item-heading">{{endpoint.Name}}</h4>
+                    <span class="label label-info pull-right">~/{{endpoint.Uri}}</span>
+                    <p class="list-group-item-text">
+                        {{endpoint.Info}}&nbsp;
+                    </p>
+                </a>
+            </ul>
+            <div class="pull-right ">
+                <a href="https://github.com/kahneraja/ApiExplr/wiki/FAQ's#why-is-my-controller-not-showing-up" class="help-block" target="_blank">Why is my Controller not showing up?</a>
+            </div>
+        </div>
     </div>
     <div class="col-md-6">
         <div class="panel panel-info">
             <ul class="list-group">
                 <a href="#/Endpoint/{{ActiveEndpoint.Name}}/Action/{{action.Name}}/HttpMethod/{{action.HttpMethod}}" class="list-group-item" ng-repeat="action in ActiveEndpoint.Actions">
                     <h4 class="list-group-item-heading">
-                        <i class="glyphicon" ng-class="{'glyphicon-export' : action.HttpMethod == 'GET', 'glyphicon-import' : action.HttpMethod == 'POST', 'glyphicon-floppy-open' : action.HttpMethod == 'PUT', 'glyphicon-floppy-remove' : action.HttpMethod == 'DELETE'}"></i> 
-                        {{action.HttpMethod}} {{action.Name}}</h4>
+                        <i class="glyphicon" ng-class="{'glyphicon-export' : action.HttpMethod == 'GET', 'glyphicon-import' : action.HttpMethod == 'POST', 'glyphicon-floppy-open' : action.HttpMethod == 'PUT', 'glyphicon-floppy-remove' : action.HttpMethod == 'DELETE'}"></i>
+                        {{action.HttpMethod}} {{action.Name}}
+                    </h4>
                     <span class="label label-info pull-right">/{{action.Uri}}</span>
                     <p class="list-group-item-text">
                         {{action.Info}}&nbsp;
                     </p>
                 </a>
             </ul>
+            <div class="pull-right ">
+                <a href="https://github.com/kahneraja/ApiExplr/wiki/FAQ's#why-are-my-controller-actions-not-showing-up" class="help-block" target="_blank">Why is my Action not showing up?</a>
+            </div>
         </div>
-
     </div>
 </div>
