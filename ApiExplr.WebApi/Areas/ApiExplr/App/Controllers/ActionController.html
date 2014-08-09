@@ -5,7 +5,10 @@
         <li><a href="#/Endpoint/{{EndpointName}}/Action/{{Action.Name}}/HttpMethod/{{Action.HttpMethod}}">{{Action.Name}}</a></li>
     </ol>
     <div class="col-md-7">
-        <h1>{{Action.Name}}</h1>
+        <h1>
+            <i class="glyphicon" ng-class="{'glyphicon-export' : Action.HttpMethod == 'GET', 'glyphicon-import' : Action.HttpMethod == 'POST', 'glyphicon-floppy-open' : Action.HttpMethod == 'PUT', 'glyphicon-floppy-remove' : Action.HttpMethod == 'DELETE'}"></i>
+            {{Action.Name}}
+        </h1>
         <h5>{{Action.Info}}</h5>
         <pre class="alert alert-dismissable alert-info">{{RequestUri}}</pre>
         <div class="panel panel-default action-parameters">
