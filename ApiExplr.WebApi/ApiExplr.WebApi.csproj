@@ -240,7 +240,8 @@
     <Content Include="Areas\ApiExplr\Lib\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\ApiExplr\Lib\JQuery\jquery.min.map" />
     <Content Include="Areas\ApiExplr\Services\Sample.json" />
-    <None Include="Properties\PublishProfiles\apiexplr-webapi.pubxml" />
+    <None Include="Properties\PublishProfiles\apiexplr-webapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\apiexplr-webapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
