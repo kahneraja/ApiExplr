@@ -452,6 +452,12 @@
             Retrieve amazing values from an amazing web api controller.
             </summary>
         </member>
+        <member name="M:ApiExplr.WebApi.Controllers.ValuesController.Get">
+            <summary>
+            Get a collection of values.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ApiExplr.WebApi.Controllers.ValuesController.Get(System.Int32)">
             <summary>
             GET api/values/5

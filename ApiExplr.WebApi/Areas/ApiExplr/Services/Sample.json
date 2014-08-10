@@ -1,18 +1,19 @@
 ﻿[
+
     {
         "Info": "Retrieve endpoint data.",
-        "Name": "Explorer",
+        "Name": "Explr",
         "Actions": [
             {
                 "Comment": null,
-                "Info": "",
-                "Parameters": [],
+                "Info": "Get endpoint data.",
+                "Parameters": [ ],
                 "Name": "Get",
                 "HttpMethod": "GET",
                 "Uri": ""
             }
         ],
-        "Uri": "api/explorer",
+        "Uri": "api/explr",
         "Comment": null
     },
     {
@@ -21,9 +22,9 @@
         "Actions": [
             {
                 "Comment": null,
-                "Info": "GET api/values/5",
-                "Parameters": [],
-                "Name": "Get",
+                "Info": "Return all customers",
+                "Parameters": [ ],
+                "Name": "GetCustomers",
                 "HttpMethod": "GET",
                 "Uri": ""
             },
@@ -35,7 +36,7 @@
                         "Name": "id",
                         "Type": "Int32",
                         "FromUri": true,
-                        "Properties": []
+                        "Properties": [ ]
                     }
                 ],
                 "Name": "Get",
@@ -70,12 +71,12 @@
                                                             {
                                                                 "Name": "Title",
                                                                 "Type": "String",
-                                                                "Properties": []
+                                                                "Properties": [ ]
                                                             },
                                                             {
                                                                 "Name": "Price",
                                                                 "Type": "Decimal",
-                                                                "Properties": []
+                                                                "Properties": [ ]
                                                             }
                                                         ]
                                                     }
@@ -84,21 +85,26 @@
                                             {
                                                 "Name": "TotalPrice",
                                                 "Type": "Decimal",
-                                                "Properties": []
+                                                "Properties": [ ]
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
+                                "Name": "Id",
+                                "Type": "Int32",
+                                "Properties": [ ]
+                            },
+                            {
                                 "Name": "Name",
                                 "Type": "String",
-                                "Properties": []
+                                "Properties": [ ]
                             },
                             {
                                 "Name": "Age",
                                 "Type": "Int32",
-                                "Properties": []
+                                "Properties": [ ]
                             },
                             {
                                 "Name": "Address",
@@ -107,32 +113,32 @@
                                     {
                                         "Name": "StreetNumber",
                                         "Type": "Int32",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     },
                                     {
                                         "Name": "StreetName",
                                         "Type": "String",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     },
                                     {
                                         "Name": "Suburb",
                                         "Type": "String",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     },
                                     {
                                         "Name": "Postcode",
                                         "Type": "Int32",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     },
                                     {
                                         "Name": "State",
                                         "Type": "String",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     },
                                     {
                                         "Name": "Country",
                                         "Type": "String",
-                                        "Properties": []
+                                        "Properties": [ ]
                                     }
                                 ]
                             }
@@ -153,8 +159,8 @@
         "Actions": [
             {
                 "Comment": null,
-                "Info": "GET api/values/5",
-                "Parameters": [],
+                "Info": "Get a collection of values.",
+                "Parameters": [ ],
                 "Name": "Get",
                 "HttpMethod": "GET",
                 "Uri": ""
@@ -167,7 +173,7 @@
                         "Name": "id",
                         "Type": "Int32",
                         "FromUri": true,
-                        "Properties": []
+                        "Properties": [ ]
                     }
                 ],
                 "Name": "Get",
@@ -182,7 +188,7 @@
                         "Name": "value",
                         "Type": "String",
                         "FromUri": false,
-                        "Properties": []
+                        "Properties": [ ]
                     }
                 ],
                 "Name": "Post",
@@ -197,13 +203,13 @@
                         "Name": "id",
                         "Type": "Int32",
                         "FromUri": true,
-                        "Properties": []
+                        "Properties": [ ]
                     },
                     {
                         "Name": "value",
                         "Type": "String",
                         "FromUri": false,
-                        "Properties": []
+                        "Properties": [ ]
                     }
                 ],
                 "Name": "Put",
@@ -218,15 +224,16 @@
                         "Name": "id",
                         "Type": "Int32",
                         "FromUri": true,
-                        "Properties": []
+                        "Properties": [ ]
                     }
                 ],
                 "Name": "Delete",
-                "HttpMethod": "",
+                "HttpMethod": "DELETE",
                 "Uri": "{id}"
             }
         ],
         "Uri": "api/values",
         "Comment": null
     }
+
 ]

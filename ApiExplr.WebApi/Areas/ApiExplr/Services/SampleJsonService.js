@@ -7,20 +7,21 @@
     function SampleJsonService($http) {
         var Sample =
 [
+
     {
         "Info": "Retrieve endpoint data.",
-        "Name": "Explorer",
+        "Name": "Explr",
         "Actions": [
             {
                 "Comment": null,
-                "Info": "",
+                "Info": "Get endpoint data.",
                 "Parameters": [],
                 "Name": "Get",
                 "HttpMethod": "GET",
                 "Uri": ""
             }
         ],
-        "Uri": "api/explorer",
+        "Uri": "api/explr",
         "Comment": null
     },
     {
@@ -29,9 +30,9 @@
         "Actions": [
             {
                 "Comment": null,
-                "Info": "GET api/values/5",
+                "Info": "Return all customers",
                 "Parameters": [],
-                "Name": "Get",
+                "Name": "GetCustomers",
                 "HttpMethod": "GET",
                 "Uri": ""
             },
@@ -99,6 +100,11 @@
                                 ]
                             },
                             {
+                                "Name": "Id",
+                                "Type": "Int32",
+                                "Properties": []
+                            },
+                            {
                                 "Name": "Name",
                                 "Type": "String",
                                 "Properties": []
@@ -161,7 +167,7 @@
         "Actions": [
             {
                 "Comment": null,
-                "Info": "GET api/values/5",
+                "Info": "Get a collection of values.",
                 "Parameters": [],
                 "Name": "Get",
                 "HttpMethod": "GET",
@@ -230,13 +236,14 @@
                     }
                 ],
                 "Name": "Delete",
-                "HttpMethod": "",
+                "HttpMethod": "DELETE",
                 "Uri": "{id}"
             }
         ],
         "Uri": "api/values",
         "Comment": null
     }
+
 ];
 
         var Service = {
