@@ -14,11 +14,11 @@
         <div class="panel panel-default action-parameters">
             <div class="panel-heading">Parameters</div>
             <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="Parameter in Action.Parameters">
+                
+                    <div ng-repeat="Parameter in Action.Parameters">
                         <div ng-include="'./App/Controllers/ParameterController.html'"></div>
-                    </li>
-                </ul>
+                    </div>
+
             </div>
         </div>
         <div class="pull-right">

@@ -159,6 +159,7 @@
     <Content Include="App_Data\XmlDocument.xml" />
     <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.js" />
     <Content Include="Areas\ApiExplr\App\Controllers\SettingsController.html" />
+    <Content Include="Areas\ApiExplr\App\Controllers\Templates\AddCollectionItem.html" />
     <Content Include="Areas\ApiExplr\App\Controllers\Templates\RequestJsonTemplate.html" />
     <Content Include="Areas\ApiExplr\App\Controllers\Templates\ResponseJsonTemplate.html" />
     <Content Include="Areas\ApiExplr\Services\OAuthTokenService.js" />

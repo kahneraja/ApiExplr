@@ -6,21 +6,19 @@
                     <span>{{Property.Name}}</span>: <span>{{Property.Type}}</span>
                     <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': IsOpen, 'glyphicon-chevron-right': !IsOpen}"></i>
                 </accordion-heading>
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="Property in Property.Properties">
-                        <div ng-include="'./App/Controllers/PropertyController.html'"></div>
-                    </li>
-                    <li class="list-group-item" ng-click="AddProperty()" ng-show="Property.IsCollectionType()">
-                        <span>Add</span><i class="pull-right glyphicon glyphicon-plus"></i>
-                    </li>
-                </ul>
+                <div ng-repeat="Property in Property.Properties">
+                    <div ng-include="'./App/Controllers/PropertyController.html'"></div>
+                </div>
+                <div ng-include="'./App/Controllers/Templates/AddCollectionItem.html'"></div>
             </accordion-group>
         </accordion>
     </div>
     <div ng-show="!Property.HasProperties()">
-        <div class="input-group">
-            <span class="input-group-addon">{{Property.Name}}</span>
-            <input type="text" class="form-control" ng-class="{'glyphicon-info-sign' : Parameter.FromUri}" ng-model="Property.Value" ng-keyup="Keyup()" placeholder="{{Property.Type}}">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">{{Property.Name}}</span>
+                <input type="text" class="form-control" ng-class="{'glyphicon-info-sign' : Parameter.FromUri}" ng-model="Property.Value" ng-keyup="Keyup()" placeholder="{{Property.Type}}">
+            </div>
         </div>
     </div>
 </div>

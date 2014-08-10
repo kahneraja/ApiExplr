@@ -7,20 +7,20 @@
                     <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': IsOpen, 'glyphicon-chevron-right': !IsOpen}"></i>
                 </accordion-heading>
                 <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="Property in Parameter.Properties">
+                    <div ng-repeat="Property in Parameter.Properties">
                         <div ng-include="'./App/Controllers/PropertyController.html'"></div>
-                    </li>
-                    <li class="list-group-item" ng-click="AddProperty()" ng-show="Parameter.IsCollectionType()">
-                        <span>Add</span><i class="pull-right glyphicon glyphicon-plus"></i>
-                    </li>
+                    </div>
+                    <div ng-include="'./App/Controllers/Templates/AddCollectionItem.html'"></div>
                 </ul>
             </accordion-group>
         </accordion>
     </div>
     <div ng-show="!Parameter.HasProperties()">
-        <div class="input-group">
-            <span class="input-group-addon">{{Parameter.Name}}</span>
-            <input type="text" class="form-control" ng-class="{'glyphicon-info-sign' : Parameter.FromUri}" ng-model="Parameter.Value" ng-keyup="Keyup()" placeholder="{{Parameter.Type}}">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">{{Parameter.Name}}</span>
+                <input type="text" class="form-control" ng-class="{'glyphicon-info-sign' : Parameter.FromUri}" ng-model="Parameter.Value" ng-keyup="Keyup()" placeholder="{{Parameter.Type}}">
+            </div>
         </div>
-    </div>
+        </div>
 </div>
