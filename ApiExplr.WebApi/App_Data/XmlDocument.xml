@@ -436,14 +436,20 @@
         </member>
         <member name="M:ApiExplr.WebApi.Controllers.CustomersController.Get(System.Int32)">
             <summary>
-            GET api/values/5
+            Get customer detail.
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:ApiExplr.WebApi.Controllers.CustomersController.Post(ApiExplr.WebApi.Models.Customer)">
             <summary>
-            POST api/values
+            Create new customer.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:ApiExplr.WebApi.Controllers.CustomersController.addresses(System.Int32,System.Collections.Generic.List{ApiExplr.WebApi.Models.Address})">
+            <summary>
+            POST addresses to customer
             </summary>
             <param name="value"></param>
         </member>

@@ -31,7 +31,7 @@ namespace ApiExplr.WebApi.Controllers
 
 
         /// <summary>
-        /// GET api/values/5
+        /// Get customer detail.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace ApiExplr.WebApi.Controllers
         }
 
         /// <summary>
-        /// POST api/values
+        /// Create new customer.
         /// </summary>
         /// <param name="value"></param>
         [HttpPost]
@@ -53,6 +53,17 @@ namespace ApiExplr.WebApi.Controllers
         public IHttpActionResult Post([FromBody] Customer customer)
         {
             return Ok(customer);
+        }
+
+        /// <summary>
+        /// POST addresses to customer
+        /// </summary>
+        /// <param name="value"></param>
+        [HttpPost]
+        [Route("addresses/{id}")]
+        public IHttpActionResult addresses([FromUri ] int id, [FromBody] List<Address> addresses)
+        {
+            return Ok(addresses);
         }
 
         private Customer CreateMockCustomer()

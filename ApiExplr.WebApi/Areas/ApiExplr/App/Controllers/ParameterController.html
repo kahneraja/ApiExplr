@@ -10,7 +10,13 @@
                     <div ng-repeat="Property in Parameter.Properties">
                         <div ng-include="'./App/Controllers/PropertyController.html'"></div>
                     </div>
-                    <div ng-include="'./App/Controllers/Templates/AddCollectionItem.html'"></div>
+                    <div ng-show="Parameter.IsCollectionType()">
+                        <div class="form-group">
+                            <div class="input-group pull-right" ng-click="Parameter.DuplicateLastProperty()">
+                                <i class="glyphicon glyphicon-plus"></i> Add
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </accordion-group>
         </accordion>
